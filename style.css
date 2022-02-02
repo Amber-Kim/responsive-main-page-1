@@ -1,0 +1,240 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #eee
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #202b38;
+  padding: 8px 12px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: normal;
+  color: #eee;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 150px;
+  color: #d49466;
+}
+
+.icons {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+
+.icons li {
+  font-size: 24px;
+  padding: 8px 5px;
+  cursor: pointer;
+}
+
+.icons li:nth-child(1) {
+  color: #3b5998;
+}
+
+.icons li:nth-child(2) {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.menu {
+  /* 한 줄에 하나씩 배치*/
+  display: flex;
+  list-style: none;
+  /* 리스트 앞에 dot 없앰*/
+  padding-left: 0;
+  /* 중간정렬을 위해 왼쪽 패딩 없앰*/
+}
+
+.menu li {
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+.menu li:hover {
+  background-color: #d49466;
+  border-radius: 5px;
+}
+
+.video video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+/* Heading */
+.heading {
+  position: absolute;
+  width: 700px;
+  left: 100px;
+  bottom: 100px;
+  animation: showing1 2s 1s linear;
+  animation-fill-mode: both;
+}
+
+.heading h1 {
+  font-size: 60px;
+  margin: 0;
+}
+
+.heading h1 span {
+  display: block;
+  color: crimson;
+}
+
+.btn-book,
+.btn-location {
+  background-color: #fff;
+  color: #222;
+  text-transform: uppercase;
+  margin-top: 20px;
+  width: 130px;
+  display: inline-block;
+  text-align: center;
+  padding: 7px;
+  border-radius: 20px;
+  margin-right: 10px;
+  border: 2px solid #fff;
+  transition: 0.3s;
+}
+
+.btn-location {
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-book:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-location:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.togglebtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: #d49466;
+}
+
+@keyframes showing1 {
+  0% {
+    opacity: 0;
+    margin-left: -100px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  margin: 0 auto;
+}
+
+
+@media screen and (max-width: 720px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar .menu li {
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .logo {
+    font-weight: bold;
+  }
+
+  .icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .togglebtn {
+    display: block;
+  }
+
+  .menu.active,
+  .icons.active {
+    display: flex;
+  }
+
+  .video {
+    display: block;
+  }
+
+  .heading {
+    flex-direction: column;
+    align-items: flex-start;
+    animation: none;
+  }
+
+  .heading a {
+    justify-content: center;
+    display: flex;
+    left: -100px;
+    width: 100%;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    
+  }
+
+  .heading h1 span {
+    font-size: 25px;
+    color: black;
+  }
+
+  .btn-location:hover,
+  .btn-book:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}
